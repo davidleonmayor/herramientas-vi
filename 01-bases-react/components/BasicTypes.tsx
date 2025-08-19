@@ -35,21 +35,6 @@ export function BasicTypes() {
       </ul>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      <h1>ME GUSTA EL PENE GIGANTE</h1>
-
-
       <button onClick={() => { console.log(active); setActive(!active)}}>Change</button>
     </div>
   );
