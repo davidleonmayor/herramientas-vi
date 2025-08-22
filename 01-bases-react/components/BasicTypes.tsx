@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 export function BasicTypes() {
   // variables
@@ -13,29 +13,41 @@ export function BasicTypes() {
 
   return (
     <div className="">
-    <h2>Variables</h2>
+      <h2>Variables</h2>
       <ol>
         <li>Name: {name}</li>
         <li>Age: {age}</li>
-        <li>is acetive: {active? "yes": "no"}</li>
+        {/* Operador ternario. */}
+        <li>is acetive: {active ? "yes" : "no"}</li>
       </ol>
 
       <hr />
-      
+
       {/* ul>li{"nombre $"}*4 */}
       <h2> Lista de nombres</h2>
       <ul>
-      {
-        names.map((name, index) => (
-          <li key={index}>
-            {name}
-          </li>
-        ))
-      }
+        <>
+          {/* Mapping */}
+          {names.map((name, index) => (
+            <li key={index}>{name}</li>
+          ))}
+        </>
       </ul>
 
+      <button
+        onClick={() => {
+          console.log(active);
+          setActive(!active);
+        }}
+      >
+        Change
+      </button>
 
-      <button onClick={() => { console.log(active); setActive(!active)}}>Change</button>
+      <hr />
+
+      <h2>Using join</h2>
+      {names.join(",")}
+      
     </div>
   );
 }
