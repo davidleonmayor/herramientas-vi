@@ -1,0 +1,67 @@
+{
+  "name": "tailwind-guide",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Course Tailwind css guide + react",
+  "keywords": [
+    "Tailwind",
+    "react",
+    "css",
+    "frontend"
+  ],
+  "author": "Jesús David León Chito",
+  "licence": "MIT",
+  "engines": {
+    "node": ">=22.18.0",
+    "pnpm": ">=10.6.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@heroicons/react": "2.2.0",
+    "@mantine/hooks": "8.3.1",
+    "@tailwindcss/vite": "4.1.13",
+    "@tanstack/react-query": "5.87.4",
+    "@tanstack/react-query-devtools": "5.87.4",
+    "lucide-react": "0.544.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-router-dom": "7.9.0",
+    "react-toastify": "11.0.5",
+    "tailwindcss": "4.1.13"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.33.0",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "@vitejs/plugin-react-swc": "4.0.0",
+    "clsx": "2.1.1",
+    "eslint": "9.33.0",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-refresh": "0.4.20",
+    "globals": "16.3.0",
+    "tailwind-merge": "3.3.1",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.39.1",
+    "vite": "7.1.2",
+    "vitest": "3.2.4"
+  }
+}
