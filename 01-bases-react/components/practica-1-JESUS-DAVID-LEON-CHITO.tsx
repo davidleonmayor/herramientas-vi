@@ -20,14 +20,18 @@ export function Practica1() {
 
   const [animalsFromAPI, setAnimalsFromAPI] = useState<AnimalI[]>(initialAnimals)
 
+  // fetch data from the API and set it in the state
   async function getFromAPI() {
-    const response = await fetch("https://electiva5-api.apolobyte.top/animals")
-    const data = await response.json()
-    console.log(data)
-    setAnimalsFromAPI(data)
+    try {
+      const response = await fetch("https://electiva5-api.apolobyte.top/animals")
+      const data = await response.json()
+      console.log(data)
+      setAnimalsFromAPI(data)
+    }
+    catch(error) {
+      console.error(error);
+    }
   }
-
-  
 
   return (
     <>
