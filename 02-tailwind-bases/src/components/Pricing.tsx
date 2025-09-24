@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
 const tiers = [
@@ -34,11 +35,7 @@ const tiers = [
   },
 ];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function Pricing() {
+export function Pricing() {
   return (
     <div className="relative isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
       <div
@@ -67,7 +64,7 @@ export default function Pricing() {
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
-            className={classNames(
+            className={cn(
               tier.featured
                 ? "relative bg-gray-800"
                 : "bg-white/2.5 sm:mx-8 lg:mx-0",
@@ -81,7 +78,7 @@ export default function Pricing() {
           >
             <h3
               id={tier.id}
-              className={classNames(
+              className={cn(
                 tier.featured ? "text-indigo-400" : "text-indigo-400",
                 "text-base/7 font-semibold"
               )}
@@ -90,7 +87,7 @@ export default function Pricing() {
             </h3>
             <p className="mt-4 flex items-baseline gap-x-2">
               <span
-                className={classNames(
+                className={cn(
                   tier.featured ? "text-white" : "text-white",
                   "text-5xl font-semibold tracking-tight"
                 )}
@@ -98,7 +95,7 @@ export default function Pricing() {
                 {tier.priceMonthly}
               </span>
               <span
-                className={classNames(
+                className={cn(
                   tier.featured ? "text-gray-400" : "text-gray-400",
                   "text-base"
                 )}
@@ -107,7 +104,7 @@ export default function Pricing() {
               </span>
             </p>
             <p
-              className={classNames(
+              className={cn(
                 tier.featured ? "text-gray-300" : "text-gray-300",
                 "mt-6 text-base/7"
               )}
@@ -116,7 +113,7 @@ export default function Pricing() {
             </p>
             <ul
               role="list"
-              className={classNames(
+              className={cn(
                 tier.featured ? "text-gray-300" : "text-gray-300",
                 "mt-8 space-y-3 text-sm/6 sm:mt-10"
               )}
@@ -125,7 +122,7 @@ export default function Pricing() {
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon
                     aria-hidden="true"
-                    className={classNames(
+                    className={cn(
                       tier.featured ? "text-indigo-400" : "text-indigo-400",
                       "h-6 w-5 flex-none"
                     )}
@@ -137,7 +134,7 @@ export default function Pricing() {
             <a
               href={tier.href}
               aria-describedby={tier.id}
-              className={classNames(
+              className={cn(
                 tier.featured
                   ? "bg-indigo-500 text-white hover:bg-indigo-400 focus-visible:outline-indigo-500"
                   : "bg-white/10 text-white inset-ring inset-ring-white/5 hover:bg-white/20 focus-visible:outline-white/75",

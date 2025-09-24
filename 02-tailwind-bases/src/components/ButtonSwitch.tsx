@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 
 export default function ButtonSwitch() {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
     <div>
-      <button
+      <Button
         disabled={isChecked}
-        className={isChecked ? "opacity-25 cursor-not-allowed" : ""}
+        className={
+          isChecked ? "opacity-25  cursor-not-allowed" : "cursor-pointer"
+        }
         onClick={() => {
           if (!isChecked) {
             toast.success("Botón habilitado");
@@ -16,7 +19,7 @@ export default function ButtonSwitch() {
         }}
       >
         {isChecked ? "No puedes hacer click 😭" : "Puedes hacer click 😊"}
-      </button>
+      </Button>
       <div className="mt-4 flex items-center gap-2">
         <input
           type="checkbox"

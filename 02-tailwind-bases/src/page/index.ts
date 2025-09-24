@@ -1,3 +1,8 @@
-export { HomePage } from "./HomePage";
-export { ButonPage } from "./ButonPage";
-export { FilterPage } from "./FilterPage";
+export * from "./HomePage";
+export * from "./ButonPage";
+export * from "./FilterPage";
+export * from "./CounterPage";
+export * from "./PricingPage";
+export * from "./StyleButtonPage";
+export * from "./RandomNumPage";
+export * from "./TasksPage";

@@ -1,7 +1,16 @@
 import { Route, BrowserRouter, Routes as RoutesWrap } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import { ToastContainer } from "react-toastify";
-import { ButonPage, FilterPage, HomePage } from "./page";
+import {
+  ButonPage,
+  FilterPage,
+  HomePage,
+  CounterPage,
+  PricingPage,
+  StyledButtonPage,
+  RandomNumPage,
+  TasksPage,
+} from "./page";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function Router() {
   return (
@@ -13,31 +22,25 @@ export default function Router() {
               <Route path="/" element={<HomePage />} />
               <Route path="/buton" element={<ButonPage />} />
               <Route path="/filter" element={<FilterPage />} />
-              <Route path="/pricing" element={<>Pricing</>} />
+              <Route path="/pricing" element={<PricingPage />} />
               <Route path="/custom-hook-pros" element={<>Custom Hook Pros</>} />
             </Route>
+
             {/*  */}
-            <Route element={<></>}>
-              <Route path="" element={<></>} />
-              <Route path="" element={<></>} />
+            <Route element={<MainLayout />}>
+              <Route path="/guide4/counter" element={<CounterPage />} />
+              <Route
+                path="/guide4/styled-button"
+                element={<StyledButtonPage />}
+              />
+              <Route path="/guide4/random-num" element={<RandomNumPage />} />
+              <Route path="/guide4/tasks" element={<TasksPage />} />
             </Route>
           </RoutesWrap>
         </BrowserRouter>
       </main>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        draggablePercent={60}
-      />
+      <Toaster />
     </>
   );
 }

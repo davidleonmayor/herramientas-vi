@@ -4,6 +4,7 @@ import { MenuIcon, XIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useViewportSize } from "@mantine/hooks";
 import { navLinks } from "../data";
+import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed w-full px-8 shadow-sm shadow-neutral-500 h-16 flex items-center z-50">
+    <header className="fixed w-full px-8 bg-black shadow-sm shadow-neutral-500 h-16 flex items-center z-50">
       <nav className="flex justify-between items-center w-full">
         <NavLink to="/" className="font-bold">
           <img
@@ -35,10 +36,10 @@ export const Navbar = () => {
           className={cn(
             "flex items-center gap-8",
             isMenuOpen &&
-              "bg-neutral-700 flex-col fixed top-16 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-0 z-40",
+              "bg-neutral-900 flex-col fixed top-16 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-0 z-40",
             !isMenuOpen &&
               isMobile &&
-              "bg-neutral-700 flex-col fixed top-16 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full z-40"
+              "bg-neutral-900 flex-col fixed top-16 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full z-40"
           )}
         >
           {navLinks.map((link) => (
@@ -55,9 +56,9 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button
+        <Button
           aria-labelledby="Menu Toggle Button"
-          className="block md:hidden"
+          className={cn("bg-blue-600", "block md:hidden")}
           onClick={toggleMenu}
         >
           {isMenuOpen ? (
@@ -65,7 +66,7 @@ export const Navbar = () => {
           ) : (
             <MenuIcon className="size-6 text-secondary" />
           )}
-        </button>
+        </Button>
       </nav>
     </header>
   );

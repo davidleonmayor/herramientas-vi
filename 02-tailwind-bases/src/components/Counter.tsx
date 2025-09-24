@@ -1,30 +1,35 @@
-import React, { useState } from "react";
+import { useCounter } from "@/hooks/useCounter";
+import { Button } from "./ui/button";
 
-export default function Counter() {
-  const [count, setCount] = useState(10);
+const INITIAL_STATE = 10,
+  INCREMENT = 1,
+  DECREMENT = 1;
 
-  const increaseBy = (value: number) => setCount(count + value);
+export function Counter() {
+  const { count, increaseBy, incrementBy } = useCounter({
+    initialState: INITIAL_STATE,
+  });
 
   return (
     <div>
-      <h3 className="">
+      <h3 className="text-5xl">
         Counter: <small>{count}</small>
       </h3>
 
-      <div className="display flex gap-2 mt-2">
-        <button
-          className="p-5 bg-blur-500 rounded-xs w-10 text-white"
-          onClick={() => increaseBy(+1)}
+      <div className="display flex justify-around gap-2 mt-2">
+        <Button
+          className="p-5 rounded-xs w-10 text-white"
+          onClick={() => incrementBy(INCREMENT)}
         >
-          +1
-        </button>
+          +{INCREMENT}
+        </Button>
 
-        <button
-          className="p-5 bg-blur-500 rounded-xs w-10 text-white"
-          onClick={() => increaseBy(-1)}
+        <Button
+          className="p-5 rounded-xs w-10 text-white"
+          onClick={() => increaseBy(DECREMENT)}
         >
-          -1
-        </button>
+          -{DECREMENT}
+        </Button>
       </div>
     </div>
   );
