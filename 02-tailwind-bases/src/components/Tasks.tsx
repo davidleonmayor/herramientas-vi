@@ -6,8 +6,8 @@ export function Tasks({
   onRemove,
 }: {
   tasks: Itask[];
-  onToggle: (title: string) => void;
-  onRemove: (title: string) => void;
+  onToggle: (id: number) => void;
+  onRemove: (id: number) => void;
 }) {
   return (
     <div className="mt-4">
@@ -21,7 +21,7 @@ export function Tasks({
               <input
                 type="checkbox"
                 checked={task.end}
-                onChange={() => onToggle(task.title)}
+                onChange={() => onToggle(task.id)}
               />
               <div>
                 <span
@@ -36,7 +36,7 @@ export function Tasks({
             </div>
 
             <button
-              onClick={() => onRemove(task.title)}
+              onClick={() => onRemove(task.id)}
               className="text-red-500 hover:underline"
             >
               Eliminar

@@ -15,9 +15,14 @@ export function useCounter({ initialState }: IuseCounter) {
     setCount((prev) => prev + amount);
   }
 
+  function reset() {
+    setCount(initialState);
+  }
+
   return {
     count,
     increaseBy,
     incrementBy,
+    reset,
   };
 }

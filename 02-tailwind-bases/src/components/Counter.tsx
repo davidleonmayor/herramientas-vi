@@ -1,12 +1,12 @@
 import { useCounter } from "@/hooks/useCounter";
 import { Button } from "./ui/button";
 
-const INITIAL_STATE = 10,
+const INITIAL_STATE = 0,
   INCREMENT = 1,
   DECREMENT = 1;
 
 export function Counter() {
-  const { count, increaseBy, incrementBy } = useCounter({
+  const { count, increaseBy, incrementBy, reset } = useCounter({
     initialState: INITIAL_STATE,
   });
 
@@ -23,12 +23,14 @@ export function Counter() {
         >
           +{INCREMENT}
         </Button>
-
         <Button
           className="p-5 rounded-xs w-10 text-white"
           onClick={() => increaseBy(DECREMENT)}
         >
           -{DECREMENT}
+        </Button>
+        <Button className="p-5 rounded-xs w-10 text-white" onClick={reset}>
+          Reset
         </Button>
       </div>
     </div>

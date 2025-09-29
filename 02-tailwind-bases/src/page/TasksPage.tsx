@@ -1,19 +1,17 @@
-import type { Itask } from "@/types";
 import { Button, Input } from "@/components/ui";
 import { Tasks } from "@/components/Tasks";
-import { useTasks } from "@/hooks/useTasks";
+import { useTask } from "@/hooks/useTask";
 import { useState } from "react";
-
-const INITIAL_TASKS: Itask[] = [
-  { title: "test1", content: "end the ...", end: false },
-  { title: "test2", content: "end the ...", end: true },
-];
+import { INITIAL_TASKS } from "@/data/index";
 
 export function TasksPage() {
-  const { tasks, insertNew, removeOne, removeAll, toggleEnd } =
-    useTasks(INITIAL_TASKS);
+  const { tasks, addTask, removeTask, resetList, toggleEnd } =
+    useTask(INITIAL_TASKS);
   const [newTitle, setNewTitle] = useState("");
   const [newContent, setNewContent] = useState("");
+
+  // index increment
+  let index = tasks.length;
 
   return (
     <div className="w-full min-h-[calc(100vh-4rem)] px-6 flex items-center justify-center flex-col p-6 space-y-4">
@@ -35,19 +33,26 @@ export function TasksPage() {
         <Button
           onClick={() => {
             if (!newTitle.trim()) return;
-            insertNew({ title: newTitle, content: newContent, end: false });
+
+            index += 1;
+            addTask({
+              id: index,
+              title: newTitle,
+              content: newContent,
+              end: false,
+            });
             setNewTitle("");
             setNewContent("");
           }}
         >
           Add
         </Button>
-        <Button variant="destructive" onClick={removeAll}>
+        <Button variant="destructive" onClick={resetList}>
           Remove all
         </Button>
       </div>
 
-      <Tasks tasks={tasks} onToggle={toggleEnd} onRemove={removeOne} />
+      <Tasks tasks={tasks} onToggle={toggleEnd} onRemove={removeTask} />
     </div>
   );
 }

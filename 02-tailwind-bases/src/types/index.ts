@@ -4,6 +4,7 @@ export interface NavLinkType {
 }
 
 export interface Itask {
+  id: number;
   title: string;
   content: string;
   end: boolean;
