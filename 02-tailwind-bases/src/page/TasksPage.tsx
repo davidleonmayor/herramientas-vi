@@ -16,7 +16,7 @@ export function TasksPage() {
   const [newContent, setNewContent] = useState("");
 
   return (
-    <div className="p-6 space-y-4">
+    <div className="w-full min-h-[calc(100vh-4rem)] px-6 flex items-center justify-center flex-col p-6 space-y-4">
       <div className="flex items-center gap-4">
         <Input
           type="text"

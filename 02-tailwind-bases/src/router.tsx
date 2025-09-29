@@ -9,6 +9,7 @@ import {
   StyledButtonPage,
   RandomNumPage,
   TasksPage,
+  NotFoundPage,
 } from "./page";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -24,10 +25,8 @@ export default function Router() {
               <Route path="/filter" element={<FilterPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/custom-hook-pros" element={<>Custom Hook Pros</>} />
-            </Route>
 
-            {/*  */}
-            <Route element={<MainLayout />}>
+              {/* Homework guide 4 tailwind */}
               <Route path="/guide4/counter" element={<CounterPage />} />
               <Route
                 path="/guide4/styled-button"
@@ -35,6 +34,9 @@ export default function Router() {
               />
               <Route path="/guide4/random-num" element={<RandomNumPage />} />
               <Route path="/guide4/tasks" element={<TasksPage />} />
+
+              {/* Ruta 404 - Must be in at the last */}
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </RoutesWrap>
         </BrowserRouter>

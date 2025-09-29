@@ -5,7 +5,7 @@ export default function MainLayout() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen w-full flex items-center justify-center top-16">
+      <div className="pt-16 flex justify-center items-center">
         <Outlet />
       </div>
     </>

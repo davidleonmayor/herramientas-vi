@@ -6,3 +6,4 @@ export * from "./PricingPage";
 export * from "./StyleButtonPage";
 export * from "./RandomNumPage";
 export * from "./TasksPage";
+export * from "./NotFoundPage";
