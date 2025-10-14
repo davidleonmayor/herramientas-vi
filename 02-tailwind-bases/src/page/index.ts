@@ -7,3 +7,4 @@ export * from "./StyleButtonPage";
 export * from "./RandomNumPage";
 export * from "./TasksPage";
 export * from "./NotFoundPage";
+export * from "./LoginPage";

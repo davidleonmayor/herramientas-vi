@@ -16,7 +16,7 @@ export function Counter() {
         Counter: <small>{count}</small>
       </h3>
 
-      <div className="display flex justify-around gap-2 mt-2">
+      <div className="flex justify-around gap-2 mt-2">
         <Button
           className="p-5 rounded-xs w-10 text-white"
           onClick={() => incrementBy(INCREMENT)}
